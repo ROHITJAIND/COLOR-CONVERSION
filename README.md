@@ -70,14 +70,14 @@ cv2.destroyAllWindows()
 ```Python
 import cv2
 img = cv2.imread('blue.jpg')
-img = cv2.resize(img,(400,300))
-cv2.imshow('Original HSV Image',img)
+img = cv2.resize(img,(300,200))
+cv2.imshow('Original RGB Image',img)
 
-YCrCb1 = cv2.cvtColor(img, cv2.COLOR_RGB2YCrCb)
-cv2.imshow('BGR2HSV',YCrCb1)
+YCrCb1 = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+cv2.imshow('RGB-2-YCrCb',YCrCb1)
 
-YCrCb2 = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
-cv2.imshow('RGB2HSV',YCrCb2)
+YCrCb2 = cv2.cvtColor(img, cv2.COLOR_RGB2YCrCb)
+cv2.imshow('BGR-2-YCrCb',YCrCb2)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -91,19 +91,19 @@ cv2.destroyAllWindows()
 
 ```Python
 import cv2
-image = cv2.imread('blue.jpg',1)
-img = cv2.resize(img,(400,300))
+img = cv2.imread('blue.jpg',1)
+img = cv2.resize(img,(300,200))
 
-blue = image[:,:,0]
-green = image[:,:,1]
-red = image[:,:,2]
+R = img[:,:,2]
+G = img[:,:,1]
+B = img[:,:,0]
 
-cv2.imshow('B-Channel',blue)
-cv2.imshow('G-Channel',green)
-cv2.imshow('R-Channel',red)
+cv2.imshow('R-Channel',R)
+cv2.imshow('G-Channel',G)
+cv2.imshow('B-Channel',B)
 
-merged = cv2.merge((blue,green,red))
-cv2.imshow('Merged BGR image',merged)
+merged = cv2.merge((B,G,R))
+cv2.imshow('Merged RGB image',merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -115,15 +115,15 @@ cv2.destroyAllWindows()
 #### v) Split and merge HSV Image
 ```Python
 import cv2
-image = cv2.imread("blue.jpg",1)
-image = cv2.resize(image,(400,300))
-image=cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
+img = cv2.imread("blue.jpg",1)
+img = cv2.resize(img,(300,200))
+img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 
-H,S,V=cv2.split(image)
+H,S,V=cv2.split(img)
 
 cv2.imshow('Hue',H)
-cv2.imshow('Saturation',H)
-cv2.imshow('Gray',V)
+cv2.imshow('Saturation',S)
+cv2.imshow('Value',V)
 
 merged = cv2.merge((H,S,V))
 cv2.imshow('Merged',merged)
