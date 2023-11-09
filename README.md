@@ -1,6 +1,6 @@
 # EX-3 COLOR CONVERSION
 ### AIM:
-To perform the color conversion between RGB, BGR, HSV, and YCbCr color models.
+To perform the color conversion between RGB, BGR, HSV, and YCbCr color models. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**DATE:** 30.08.2023
 ### Software Required:
 Anaconda - Python 3.7
 ### Algorithm:
